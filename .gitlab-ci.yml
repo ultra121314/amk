@@ -1,0 +1,19 @@
+stages:
+  - build
+  - deploy
+
+before_script:
+  - echo "MADE BY ULTRA BHAI.."
+
+build:
+  stage: build
+  image: python:3.10
+  script:
+    - pip install telebot pymongo aiohttp psutil pytz python-telegram-bot
+    - gcc -o SHYAM bgmi.c -lpthread -static
+    - chmod +x SHYAM
+
+deploy:
+  stage: deploy
+  script:
+    - python3 SHYAM.py
