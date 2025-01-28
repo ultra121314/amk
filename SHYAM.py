@@ -7,7 +7,7 @@ from telegram.ext import Application, CommandHandler, CallbackContext
 TELEGRAM_BOT_TOKEN = '7289992579:AAEaDnFhijT2CbZfTKtmrCtdl_uAypGUSuI'
 
 # Predefined list of authorized group IDs (replace these with actual group IDs)
-AUTHORIZED_GROUPS = {-1002409757185, -1002497901366}  # Add your group IDs here
+AUTHORIZED_GROUPS = {-1002358927911, -1002409757185}  # Add your group IDs here
 
 # Check if the group is authorized
 def is_group_authorized(chat_id):
@@ -31,7 +31,7 @@ async def start(update: Update, context: CallbackContext):
 async def run_attack(chat_id, ip, port, duration, context):
     try:
         process = await asyncio.create_subprocess_shell(
-            f"./SHYAM {ip} {port} {duration} 50",
+            f"./SHYAM {ip} {port} {duration} 05",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
